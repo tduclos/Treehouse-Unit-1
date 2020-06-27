@@ -36,6 +36,8 @@ const quotes = [
     }   
 ];
 
+let randomRGB;
+
 //Uncomment this to verify the array is working as intended in the console
 //console.log(quotes);
 
@@ -48,11 +50,18 @@ function getRandomQuote(){
     return quotes[quoteNum];
 };
 
+/*`the 'randomColorValue' function generates a random value between 0 and 255, used to update the background color as part of Extra Credit part 2*/
+function randomColorValue(){
+  return Math.floor(Math.random() * 256);
+}
+
 /*the 'printQuote' function calls the 'getRandomQuote' function and uses the value to pull an object from the array, formats the contents into a string, and displays it on index.html*/
 
 function printQuote(){
     //Uncomment to verify the function is running when called.
     //console.log('Printing quote...');
+    
+    
     let quoteToPrint = getRandomQuote();
     let string =    `<p class="quote"> ${quoteToPrint.string}</p>
                     <p class="source"> ${quoteToPrint.source}`
@@ -67,6 +76,10 @@ function printQuote(){
     if(quoteToPrint.hasOwnProperty('tag')){
         string += `<p>Tag: ${quoteToPrint.tag}</p>`
     }
+
+    /*Extra credit part 2: Change the background color to a random RGB value. Shoutouts to tutorialrepublic.com for introducing me to document.body.style!*/
+   document.body.style.background = `rgb( ${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()} )`;
+    
     document.getElementById('quote-box').innerHTML = string; 
 };
 
