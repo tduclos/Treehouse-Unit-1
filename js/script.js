@@ -36,8 +36,6 @@ const quotes = [
     }   
 ];
 
-let randomRGB;
-
 //Uncomment this to verify the array is working as intended in the console
 //console.log(quotes);
 
