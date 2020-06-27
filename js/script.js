@@ -40,8 +40,10 @@ console.log(quotes);
  * `getRandomQuote` function
 ***/
 
-function GetRandomQuote(){
-    
+function getRandomQuote(){
+    let quoteNum = Math.floor(Math.random()* quotes.length);   
+    console.log(quoteNum);
+    return quotes[quoteNum];
 };
 
 /***
